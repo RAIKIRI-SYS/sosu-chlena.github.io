@@ -1,0 +1,301 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish:ital,wght@1,500&display=swap');
+
+@import "nullstile.css";
+
+
+
+
+button{
+    background-color:  #EE685F;
+}
+
+
+body{
+    color: #262729;
+    padding: 10px 0;
+    font-family: Mulish, sans-serif;
+}
+
+
+
+
+$black: #262729;
+$red: #EE685F;
+$blue: #2A90D9;
+$white: #fff;
+
+
+
+
+
+
+.header {
+     background-color: $white;
+     margin: 0 auto;
+     max-width: 100%;
+    &__row {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        width: 100%;
+        align-items: center;
+        overflow: hidden;
+        
+        &_logo {   
+            position: relative;
+            z-index: 1; 
+        }
+            
+        &_burger{
+            display: none;
+            position: relative;
+            overflow: hidden;
+            width: 35px;
+            height: 25px;
+            
+            span{
+                background-color: $black;
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                top: 11px;
+
+               
+            }
+
+
+
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: $black;
+                top: 0;
+                @media(max-width:460px){
+                    height: 2px;
+                }
+            }
+
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: $black;
+                bottom: 0;
+                @media(max-width:460px){
+                    height: 2px;
+                }
+                
+            }
+
+            
+            @media(max-width:970px){
+                display: block;
+            }
+
+           
+            
+        }
+
+
+        &_nav {
+            width: 100%;
+            @media(max-width:970px){
+                display: none;
+            }
+
+        }
+
+        &_items {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: end;
+            gap: 30px;
+        }
+
+        &_firstitem {
+            background-color: #fff;
+            font-size: 30px;
+            height: 100%;
+            color: $red;
+            border-bottom: 2px dashed $red;
+            border-width: 2px;
+
+            @media (max-width:650px){
+                display: none;
+            }
+            
+        }
+
+        &_seconditem {
+            background-color: #fff;
+            font-size: 30px;
+            height: 100%;
+            color: $red;    
+            border-bottom: 2px dashed $red;   
+            @media (max-width:650px){
+                display: none;
+            }   
+            
+        }
+
+        &_thirditem {
+            background-color: #fff;
+           border-radius: 50%;
+           border: 2px solid $red;
+           height: 53px;
+           width: 53px;
+           position: relative;
+           overflow: hidden;
+
+           @media(max-width:340px) {
+            height: 40px;
+            width: 40px;
+           }
+           &::before{
+            content: '';
+            position: absolute;
+            z-index: 2;
+            width: 90%;
+            height: 50px;
+            border: 2px solid $red;
+            border-radius: 50%;
+            bottom: -60%;
+            left: 5%;
+            box-shadow: 0 3px 15px 0 #000;
+            @media(max-width:340px){
+                height: 37px;
+                width: 90%;
+            }
+           }
+
+           &::after{
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 50%;
+            height: 25px;
+            border: 2px solid $red;
+            border-radius: 50%;
+            left: 25%;
+            bottom: 39%;
+            box-shadow: 0 3px 15px 0 #000;
+            @media(max-width:340px){
+                height: 18px;
+                bottom: 37%;
+            }
+           }
+             
+           @media (max-width:650px){
+            left: 50%;
+            margin: 0 40px 0 0;
+           }
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin: 0 auto; 
+        width: 100%;
+        padding: 3%;
+        overflow: hidden;
+        &_photo{
+            overflow: hidden;
+            img{
+             width: 100%;   
+            }
+        }
+
+        &_search{
+            width: 500px;
+            height: 60px;
+            background-color: $white;
+            position: absolute;
+            z-index: 2; 
+            margin: 0 auto;
+            bottom: 3%;
+            box-shadow: 0 0 10px 0 $black;
+            border-radius: 30px;
+            @media(max-width:970px){
+                width: 350px;
+                height: 40px;
+            }
+
+            @media(max-width:390px){
+                width: 250px;
+                height: 30px;
+            }
+        }
+
+        
+    }
+
+    
+}
+.container {
+    margin: 0 auto;
+    max-width: 1170px;
+
+    @media (max-width:970px){
+            max-width: 750px;
+    }
+    
+}
+.navlist {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    justify-content: flex-start;
+    padding: 0 5%;
+    font-weight: 500;
+}
+.navlink {
+    position: relative;
+    transition: all 0.3s;
+    padding: 10px;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        bottom: 0;
+        left: 50%;
+        background-color: $black;
+        opacity: 0;
+        transition: all 0.3s;
+
+    }
+    
+    &:hover::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        border-radius: 5%;
+        bottom: 0;
+        left: 0%;
+        background-color: $black;
+        opacity: 80%;
+        background-color: $red;
+    }
+
+    &:hover{
+        color: $red;
+
+    }
+
+
+}
+
+
+
+
